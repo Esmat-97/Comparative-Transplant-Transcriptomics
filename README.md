@@ -155,4 +155,4 @@ Special emphasis is placed on:
 ---
 
 Inflammatory signaling networks
-Translational computational immunology
+Translational computational immunolog
