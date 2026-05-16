@@ -1,6 +1,8 @@
-Comparative Transplant Transcriptomics
+🧬 Comparative Transplant Transcriptomics
+
 📌 Project Overview
 This repository provides a comparative transcriptomic analysis of immune signatures in different transplant contexts (e.g., heart vs. corneal transplants).
+
 The workflow integrates GEO RNA-seq datasets with gene annotation, computes immune pathway scores, and visualizes rejection vs tolerance mechanisms through heatmaps, correlation plots, and gene trajectories.
 
 🧬 Data Sources
@@ -23,7 +25,19 @@ Immune Signature Scoring
 
 Predefined gene sets for pathways:
 
-Inflammation, Chemokine, T-cell exhaustion, Treg, NFkB, NFAT, IFNG axis.
+Inflammation
+
+Chemokine
+
+T-cell exhaustion
+
+Treg
+
+NFkB
+
+NFAT
+
+IFNG axis
 
 Compute average expression per signature across samples.
 
