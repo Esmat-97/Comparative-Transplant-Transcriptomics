@@ -154,43 +154,5 @@ Special emphasis is placed on:
 
 ---
 
-## Required Libraries
-
-```bash
-pip install pandas numpy seaborn matplotlib scikit-learn networkx
-🚀 Usage
-
-Run the main analysis script:
-
-python immune_signature_analysis.py
-Generated Outputs
-immune_signatures.png
-correlation_analysis.png
-gene_timecourse.png
-🎯 Project Goals
-
-This repository aims to:
-
-Provide a reproducible workflow for comparative transplant transcriptomics
-Characterize immune rejection versus tolerance programs
-Visualize immune pathway dynamics across transplant contexts
-Support translational and precision immunology research
-Serve as a scalable foundation for future multi-omics integration
-📚 Future Directions
-
-Potential extensions include:
-
-Single-cell transcriptomic integration
-Spatial transcriptomics
-Machine learning–based immune state classification
-Cell–cell communication analysis
-Cross-organ transplant immune atlases
-👨‍🔬 Research Context
-
-This project was developed as part of ongoing interests in:
-
-Transplant immunology
-Immune tolerance biology
-Treg stability and FOXP3 maintenance
 Inflammatory signaling networks
 Translational computational immunology
