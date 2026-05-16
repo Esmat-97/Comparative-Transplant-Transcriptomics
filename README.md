@@ -154,5 +154,7 @@ Special emphasis is placed on:
 
 ---
 
-Inflammatory signaling networks
-Translational computational immunolog
+## Required Libraries
+
+```bash
+pip install pandas numpy seaborn matplotlib scikit-learn networkx
