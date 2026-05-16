@@ -1,92 +1,146 @@
 🧬 Comparative Transplant Transcriptomics
+📌 Overview
 
-📌 Project Overview
-This repository provides a comparative transcriptomic analysis of immune signatures in different transplant contexts (e.g., heart vs. corneal transplants).
+This project provides a comparative transcriptomic framework to study immune responses across different transplant settings, with a focus on rejection versus tolerance mechanisms.
 
-The workflow integrates GEO RNA-seq datasets with gene annotation, computes immune pathway scores, and visualizes rejection vs tolerance mechanisms through heatmaps, correlation plots, and gene trajectories.
+By integrating publicly available GEO transcriptomic datasets from heart and corneal transplantation, the workflow identifies and visualizes immune pathway dynamics associated with inflammatory activation, immune regulation, and graft tolerance.
 
-🧬 Data Sources
-Heart transplant dataset: GSE4315
+The pipeline combines:
 
-Corneal transplant dataset: GSE232177
+GEO dataset processing
+Probe-to-gene annotation
+Immune signature scoring
+Correlation analysis
+Temporal trajectory visualization
 
-Annotation files: GPL96-57554, GPL24324-69524
+The project is designed as a reproducible foundation for transplant immunology, systems immunology, and precision medicine research.
 
-Data retrieved from NCBI GEO (Gene Expression Omnibus).
+🧬 Datasets
+Transplant Type	GEO Accession
+Heart Transplant	GSE4315
+Corneal Transplant	GSE232177
+Annotation Platforms
+GPL96-57554
+GPL24324-69524
+
+All datasets were obtained from the NCBI GEO repository.
 
 ⚙️ Workflow
-Data Import & Annotation
+1️⃣ Data Import & Annotation
+Load GEO Series Matrix files
+Parse expression matrices
+Map probe IDs to gene symbols using GEO platform annotations
+Clean and harmonize datasets across platforms
+2️⃣ Immune Signature Scoring
 
-Read GEO series matrix files.
+Immune-related pathways are quantified using predefined gene signatures.
 
-Map probe IDs → gene symbols using platform annotation.
-
-Immune Signature Scoring
-
-Predefined gene sets for pathways:
-
+Included Signatures
 Inflammation
-
-Chemokine
-
+Chemokine signaling
 T-cell exhaustion
-
-Treg
-
-NFkB
-
-NFAT
-
+Treg / immune tolerance
+NFκB signaling
+NFAT signaling
 IFNG axis
 
-Compute average expression per signature across samples.
+For each sample:
 
-Visualization
+genes belonging to a signature are extracted
+average normalized expression is calculated
+pathway activity scores are generated
+3️⃣ Visualization
+🔥 Immune Signature Heatmaps
 
-Heatmaps of immune signatures across samples.
+Visualize pathway activity across transplant conditions and samples.
 
-Correlation analysis between pathways (e.g., Chemokine vs IFNG).
+🔗 Correlation Analysis
 
-Gene expression trajectories across timepoints (Before, During, After transplant).
+Evaluate relationships between immune programs, including:
 
-Comparative Analysis
+Chemokine ↔ IFNG axis
+Treg ↔ inflammatory pathways
+Exhaustion ↔ tolerance markers
+📈 Temporal Gene Trajectories
 
-Contrast immune landscapes between corneal and heart transplants.
+Track dynamic changes in key immune genes across transplant stages:
 
-Highlight differences in rejection vs tolerance mechanisms.
+Before transplant
+During rejection
+Post-transplant / tolerance phase
 
+Representative genes include:
+
+IFNG
+TNF
+FOXP3
+PDCD1
+CXCL9
+CXCL10
+🔬 Comparative Transplant Analysis
+
+The framework enables direct comparison between:
+
+highly inflammatory solid-organ transplantation (heart)
+relatively immune-privileged transplantation (cornea)
+
+This allows identification of:
+
+rejection-associated immune activation
+tolerance-associated regulatory programs
+preserved versus divergent immune pathways
+
+Particular emphasis is placed on:
+
+IFNG-driven inflammatory signaling
+chemokine recruitment programs
+maintenance of FOXP3-associated tolerance signatures
+exhaustion-related immune modulation
 📊 Example Outputs
-Immune Signature Heatmap → pathway activity across samples.
-
-Correlation Heatmap → relationships between immune axes.
-
-Trajectory Plots → dynamics of key genes (IFNG, TNF, FOXP3, PDCD1, CXCL9, CXCL10).
-
+Output	Description
+immune_signatures.png	Heatmap of immune pathway activity
+correlation_analysis.png	Correlation matrix between immune signatures
+gene_timecourse.png	Temporal trajectories of key immune genes
 🛠️ Requirements
+Python
 Python ≥ 3.9
-
-Libraries:
-
-bash
+Required Libraries
 pip install pandas numpy seaborn matplotlib scikit-learn networkx
 🚀 Usage
-Run the analysis script:
 
-bash
+Run the main analysis script:
+
 python immune_signature_analysis.py
-Outputs:
+
+Generated outputs:
 
 immune_signatures.png
-
 correlation_analysis.png
-
 gene_timecourse.png
+🎯 Project Goals
 
-🎯 Goal
 This repository aims to:
 
-Provide a reproducible workflow for immune transcriptomic comparison in transplant biology.
+Provide a reproducible workflow for comparative transplant transcriptomics
+Characterize immune rejection versus tolerance programs
+Visualize immune pathway dynamics across transplant contexts
+Support translational and precision immunology research
+Serve as a scalable foundation for future multi-omics integration
+📚 Future Directions
 
-Enable visualization of immune tolerance vs rejection signatures.
+Potential extensions include:
 
-Serve as a foundation for precision immunology and translational research.
+Single-cell transcriptomic integration
+Spatial transcriptomics
+Machine learning–based immune state classification
+Cell–cell communication analysis
+Cross-organ transplant immune atlases
+👨‍🔬 Research Context
+
+This project was developed as part of ongoing interests in:
+
+transplant immunology
+immune tolerance biology
+Treg stability and FOXP3 maintenance
+inflammatory signaling networks
+translational computational immunology
